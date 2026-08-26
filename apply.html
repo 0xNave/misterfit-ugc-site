@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply — Misterfit UGC Accelerator</title>
+<meta name="description" content="Apply for a free strategy call for the Misterfit UGC Accelerator.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="config.js"></script>
+</head>
+<body>
+
+<nav class="topbar">
+  <a class="logo" href="index.html">Mister<span>fit</span></a>
+  <a class="btn small ghost" href="index.html#pricing">Pricing</a>
+</nav>
+
+<main class="apply-shell">
+  <p class="eyebrow">Application · ~2 minutes</p>
+  <h1 class="display">Apply for your strategy call</h1>
+  <p class="sub">Seven quick questions so the call is about your plan, not your paperwork. You already know the price — $2,000, or 3 × $700.</p>
+
+  <div class="progress" aria-hidden="true"><div class="bar" id="bar"></div></div>
+
+  <form id="appform" novalidate>
+
+    <!-- Step 1: contact -->
+    <div class="qstep active" data-step="1">
+      <h2>First — who are you?</h2>
+      <p class="hint">So we know who we're talking to.</p>
+      <label class="field">Name
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label class="field">Email
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label class="field">Phone (for call reminders)
+        <input type="tel" name="phone" autocomplete="tel" required>
+      </label>
+      <label class="field">Instagram or TikTok handle <span style="font-weight:400;color:var(--ink-faint)">(optional)</span>
+        <input type="text" name="handle" placeholder="@yourhandle">
+      </label>
+      <div class="nav-row"><span class="spacer"></span><button type="button" class="btn" data-next>Next</button></div>
+      <p class="error-note" id="err-1">Please fill in your name, a valid email, and a phone number.</p>
+    </div>
+
+    <!-- Step 2: current stage -->
+    <div class="qstep" data-step="2">
+      <h2>Where are you right now with content?</h2>
+      <div class="optlist" data-field="stage">
+        <button type="button" class="optbtn" data-value="never-posted">I've never really posted content</button>
+        <button type="button" class="optbtn" data-value="posting-unpaid">I post sometimes, but I've never been paid</button>
+        <button type="button" class="optbtn" data-value="small-deals">I've landed a few deals — under $500/month</button>
+        <button type="button" class="optbtn" data-value="earning">I'm making $500–$2,000/month from content</button>
+      </div>
+      <div class="nav-row"><button type="button" class="btn ghost" data-back>Back</button><span class="spacer"></span></div>
+    </div>
+
+    <!-- Step 3: prior investment -->
+    <div class="qstep" data-step="3">
+      <h2>Have you invested in courses or coaching before?</h2>
+      <div class="optlist" data-field="prior_investment">
+        <button type="button" class="optbtn" data-value="first">$0 — this would be my first</button>
+        <button type="button" class="optbtn" data-value="under-500">Under $500</button>
+        <button type="button" class="optbtn" data-value="500-2000">$500 – $2,000</button>
+        <button type="button" class="optbtn" data-value="over-2000">Over $2,000</button>
+      </div>
+      <div class="nav-row"><button type="button" class="btn ghost" data-back>Back</button><span class="spacer"></span></div>
+    </div>
+
+    <!-- Step 4: time -->
+    <div class="qstep" data-step="4">
+      <h2>How many hours a week can you actually commit?</h2>
+      <p class="hint">Honest answer — the program is built around 5–10 focused hours.</p>
+      <div class="optlist" data-field="hours">
+        <button type="button" class="optbtn" data-value="under-5">Under 5 hours</button>
+        <button type="button" class="optbtn" data-value="5-10">5–10 hours</button>
+        <button type="button" class="optbtn" data-value="10-plus">10+ hours</button>
+      </div>
+      <div class="nav-row"><button type="button" class="btn ghost" data-back>Back</button><span class="spacer"></span></div>
+    </div>
+
+    <!-- Step 5: obstacle -->
+    <div class="qstep" data-step="5">
+      <h2>What's the #1 thing stopping you from getting paid for content right now?</h2>
+      <p class="hint">Don't skip the messy details — this is what we'll actually dig into on the call.</p>
+      <label class="field" style="font-weight:400">
+        <textarea name="obstacle" required placeholder="Be specific…"></textarea>
+      </label>
+      <div class="nav-row"><button type="button" class="btn ghost" data-back>Back</button><span class="spacer"></span><button type="button" class="btn" data-next>Next</button></div>
+      <p class="error-note" id="err-5">A sentence or two helps us prepare — please fill this in.</p>
+    </div>
+
+    <!-- Step 6: investment readiness (branch point) -->
+    <div class="qstep" data-step="6">
+      <h2>The program is a $2,000 investment — or 3 payments of $700.</h2>
+      <p class="hint">If we both decide on the call that it's the right fit, are you in a position to make that work?</p>
+      <div class="optlist" data-field="investment">
+        <button type="button" class="optbtn" data-value="ready-now">Yes — I'm ready now</button>
+        <button type="button" class="optbtn" data-value="payment-plan">Yes — with the payment plan</button>
+        <button type="button" class="optbtn" data-value="not-now">Not right now</button>
+      </div>
+      <div class="nav-row"><button type="button" class="btn ghost" data-back>Back</button><span class="spacer"></span></div>
+    </div>
+
+    <!-- Step 7: show-up commitment -->
+    <div class="qstep" data-step="7">
+      <h2>Last one: if we book a call, can you commit to showing up?</h2>
+      <p class="hint">Spots are limited per cohort, and a no-show takes a slot from someone else.</p>
+      <div class="optlist" data-field="commitment">
+        <button type="button" class="optbtn" data-value="yes">Yes — I'll be there</button>
+        <button type="button" class="optbtn" data-value="no">No, I can't commit to that</button>
+      </div>
+      <div class="nav-row"><button type="button" class="btn ghost" data-back>Back</button><span class="spacer"></span></div>
+    </div>
+  </form>
+
+  <!-- Qualified end screen -->
+  <div class="endscreen" id="screen-qualified" hidden>
+    <p class="eyebrow">Application received</p>
+    <h2 class="display">You're in — book your call</h2>
+    <p>Pick a time that works for you below. Come with your questions; leave with a plan either way.</p>
+    <div class="calendly-slot" id="calendly-slot"></div>
+    <p id="no-calendar-msg" hidden>We've got your application — you'll hear from us within 24 hours to schedule your call.</p>
+  </div>
+
+  <!-- Waitlist / downsell end screen -->
+  <div class="endscreen" id="screen-waitlist" hidden>
+    <p class="eyebrow">Application received</p>
+    <h2 class="display">Let's keep in touch</h2>
+    <p id="waitlist-msg">No stress — the worst move is investing money you can't afford. We've saved your application, and we'll send you free resources to start building your portfolio now, so you're ready when the timing is right.</p>
+    <a class="btn" id="downsell-btn" hidden href="#">Start with the starter resources</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="logo">Misterfit</div>
+    <p>© Misterfit. Educational program — results depend on your effort and are not guaranteed.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cfg = window.MISTERFIT_CONFIG || {};
+  var form = document.getElementById("appform");
+  var steps = Array.prototype.slice.call(form.querySelectorAll(".qstep"));
+  var bar = document.getElementById("bar");
+  var TOTAL = steps.length;
+  var current = 0;
+  var answers = {};
+
+  function show(i) {
+    steps[current].classList.remove("active");
+    current = i;
+    steps[current].classList.add("active");
+    bar.style.width = Math.round(((i + 1) / TOTAL) * 100) + "%";
+    window.scrollTo({ top: 0 });
+    var first = steps[current].querySelector("input, textarea");
+    if (first) first.focus();
+  }
+
+  function collectContact() {
+    var name = form.elements.name.value.trim();
+    var email = form.elements.email.value.trim();
+    var phone = form.elements.phone.value.trim();
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || !phone) return false;
+    answers.name = name;
+    answers.email = email;
+    answers.phone = phone;
+    answers.handle = form.elements.handle.value.trim();
+    return true;
+  }
+
+  function submitApplication(status) {
+    answers.status = status; // "qualified" | "waitlist"
+    answers.submitted_at = new Date().toISOString();
+    if (cfg.FORM_ENDPOINT) {
+      fetch(cfg.FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(answers)
+      }).catch(function () { /* never block the user on capture */ });
+    }
+  }
+
+  function finish() {
+    var qualified = answers.investment !== "not-now" && answers.commitment === "yes";
+    form.hidden = true;
+    bar.style.width = "100%";
+    submitApplication(qualified ? "qualified" : "waitlist");
+
+    if (qualified) {
+      var screen = document.getElementById("screen-qualified");
+      screen.hidden = false;
+      if (cfg.CALENDLY_URL) {
+        var slot = document.getElementById("calendly-slot");
+        var div = document.createElement("div");
+        div.className = "calendly-inline-widget";
+        div.style.minWidth = "320px";
+        div.style.height = "700px";
+        var url = cfg.CALENDLY_URL + (cfg.CALENDLY_URL.indexOf("?") > -1 ? "&" : "?") +
+          "name=" + encodeURIComponent(answers.name) +
+          "&email=" + encodeURIComponent(answers.email);
+        div.setAttribute("data-url", url);
+        slot.appendChild(div);
+        var s = document.createElement("script");
+        s.src = "https://assets.calendly.com/assets/external/widget.js";
+        s.async = true;
+        document.body.appendChild(s);
+      } else {
+        document.getElementById("no-calendar-msg").hidden = false;
+      }
+    } else {
+      var wl = document.getElementById("screen-waitlist");
+      wl.hidden = false;
+      if (answers.commitment === "no") {
+        document.getElementById("waitlist-msg").textContent =
+          "No stress — come back when you can commit to the call. We'll hold your application, and you're welcome to re-apply whenever you're ready.";
+      }
+      if (cfg.DOWNSELL_URL) {
+        var b = document.getElementById("downsell-btn");
+        b.href = cfg.DOWNSELL_URL;
+        b.hidden = false;
+      }
+    }
+  }
+
+  function advance() {
+    // Step 7 answered, or waitlist branch from step 6 → finish
+    if (current === TOTAL - 1 || (steps[current].dataset.step === "6" && answers.investment === "not-now")) {
+      finish();
+    } else {
+      show(current + 1);
+    }
+  }
+
+  form.addEventListener("click", function (e) {
+    var t = e.target;
+
+    if (t.matches("[data-next]")) {
+      var stepNo = steps[current].dataset.step;
+      if (stepNo === "1") {
+        var ok = collectContact();
+        document.getElementById("err-1").classList.toggle("show", !ok);
+        if (!ok) return;
+      }
+      if (stepNo === "5") {
+        var v = form.elements.obstacle.value.trim();
+        document.getElementById("err-5").classList.toggle("show", v.length < 5);
+        if (v.length < 5) return;
+        answers.obstacle = v;
+      }
+      advance();
+    }
+
+    if (t.matches("[data-back]") && current > 0) show(current - 1);
+
+    if (t.matches(".optbtn")) {
+      var list = t.closest(".optlist");
+      list.querySelectorAll(".optbtn").forEach(function (b) { b.classList.remove("selected"); });
+      t.classList.add("selected");
+      answers[list.dataset.field] = t.dataset.value;
+      setTimeout(advance, 180);
+    }
+  });
+
+  form.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") {
+      e.preventDefault();
+      var next = steps[current].querySelector("[data-next]");
+      if (next) next.click();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
